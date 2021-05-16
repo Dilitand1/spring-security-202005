@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="01 - Основы Spring Security"/>
+  <title>01 - Основы Spring Security</title>
+  <meta name="author" content="Дворжецкий Юрий">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/browse/reveal.js@4.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="style/theme.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.1.0/plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>Фреймворк Spring Security</h2>
+      <br>
+      <h3>Модуль 01. Основы Spring Security</h3>
+      <br>
+      <h4 class="right">Дворжецкий Юрий</h4>
+    </section>
+
+    <section>
+      <section>
+        <h3>1.1. Вопросы безопасности</h3>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Какие бывают угрозы безопасности?</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Какие бывают угрозы безопасности?</p>
+          <ul>
+            <li>Неправомерный доступ к информации</li>
+            <li>Проверять, что пользователь тот, за кого себя выдаёт</li>
+            <li>Угроза целостности информации</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Как мы можем устранить данные угрозы?</p>
+          <ul>
+            <li>Устранение уязвимостей<br>(это технические вопросы, и это не тема данного курса)</li>
+            <li>Проверять, что пользователь тот, за кого себя выдаёт</li>
+            <li>Предоставлять пользователю доступ только к разрешённой информации</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Как называются данные действия?</p>
+          <ul>
+            <li>Проверять, что пользователь тот, за кого себя выдаёт</li>
+            <li>Предоставлять пользователю доступ только к разрешённой информации</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Как называются данные действия?</p>
+          <ul>
+            <li><b>Аутентификация</b>&nbsp;&mdash; проверка, что пользователь тот, за кого себя выдаёт.</li>
+            <li><b>Авторизация</b>&nbsp;&mdash; предоставление или проверка прав пользователя
+              на совершение каких-либо действий.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Как называются данные действия?</p>
+          <ul>
+            <li><b>Идентификация</b>&nbsp;&mdash; определение текущего пользователя.</li>
+            <li><b>Аутентификация</b>&nbsp;&mdash; проверка, что пользователь тот, за кого себя выдаёт.</li>
+            <li><b>Авторизация</b>&nbsp;&mdash; предоставление или проверка прав пользователя
+              на совершение каких-либо действий.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Какие механизмы нужны для этих действий?</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Упражнение</h3>
+        <div class="r-stretch">
+          <p>Какие механизмы нужны для этих действий?</p>
+          <ul>
+            <li>хранение пользователей;</li>
+            <li>хранение паролей (других секретов);</li>
+            <li>хранение прав доступа;</li>
+            <li>механизмы проверки прав доступа;</li>
+            <li>и т.д.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="center">
+          <b>Spring Security</b>&nbsp;&mdash; это фреймворк, содержащий реализации механизмов для поддержания
+          аутентификации и авторизации в
+        </div>
+      </section>
+
+      <section>
+        <h2 class="center">Вопросы?</h2>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>1.2. Spring Security</h3>
+      </section>
+
+      <section>
+        <h3>Модули Spring Security</h3>
+        <div class="r-stretch">
+          <ul>
+            <li>spring-security-core</li>
+            <li>spring-security-web</li>
+            <li>spring-security-config</li>
+            <li>spring-security-ldap</li>
+            <li>spring-security-acl</li>
+            <li>spring-security-cas</li>
+            <li>spring-security-test</li>
+            <li>spring-security-openid</li>
+            <li>spring-security-oauth2-core</li>
+            <li>spring-security-oauth2-client</li>
+            <li>spring-security-oauth2-jose</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Механизмы Spring Security</h3>
+        <div class="r-stretch">
+          <ul>
+            <li>Различные аутентификации</li>
+            <li>URL-based авторизация</li>
+            <li>Method-based авторизация</li>
+            <li>Авторизация на основе доменных сущностей с помощью ACL (Access Control List)</li>
+            <li>Идентификация с помощью OAuth 2.0</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Механизмы аутентификации Spring Security</h3>
+        <div class="r-stretch">
+          <ul>
+            <li>HTTP Basic</li>
+            <li>Form-based аутентификация</li>
+            <li>Remember-me аутентификация</li>
+            <li>Анонимная аутентификация</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3>Лабораторная №1</h3>
+        <div class="r-stretch">
+          <ol>
+            <li>Взять себе репозиторий с упражнениями</li>
+            <li>Папка lab-01</li>
+            <li>Разобраться в доменной области</li>
+            <li>Разобраться в приложении</li>
+            <li>Число 1 в чат, как разберётесь</li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="center">Спасибо за внимание!</h2>
+      </section>
+    </section>
+  </div>
+</div>
+<!-- Reveal JS -->
+<script src="https://unpkg.com/reveal.js@4.1.0/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+<script src="js/reveal-init.js"></script>
+</body>
+</html>
