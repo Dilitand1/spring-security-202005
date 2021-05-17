@@ -1,0 +1,43 @@
+### Все компании
+###user1 Authorization: Basic dXNlcjE6cGFzc3dvcmQ=
+###admin Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+GET http://localhost:8090/company
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+### Компании пользователя
+
+GET http://localhost:8090/company?user-id=2001
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+### Получить компанию по id admin
+GET http://localhost:8090/company/1001
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+### Получить компанию по id user
+GET http://localhost:8090/company/1001
+Authorization: dXNlcjE6cGFzc3dvcmQ=
+
+### Создать компанию
+
+POST http://localhost:8090/company?user-id=2001
+Authorization: Basic dXNlcjE6cGFzc3dvcmQ=
+Content-Type: application/json
+
+{
+  "name": "Linux Foundation"
+}
+
+### Обновить компанию
+
+PUT http://localhost:8090/company
+Content-Type: application/json
+
+{
+  "id": 1001,
+  "name": "DXC"
+}
+
+### Любая публичная информация
+
+GET http://localhost:8090/info
