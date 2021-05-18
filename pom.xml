@@ -19,6 +19,13 @@
         <java.version>11</java.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>internal</id>
+            <url>http://sbtatlas.sigma.sbrf.ru/nexus/content/groups/internal</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

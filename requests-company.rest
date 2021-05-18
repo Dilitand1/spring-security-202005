@@ -1,7 +1,8 @@
 ### Все компании
 
 GET http://localhost:8090/company
-
+Authorization: Basic dXNlcjo5NDIyOGQ3NC0yOTg4LTQxNjgtYWNkZC1mMGIwZDg2NTQwOTI=
+§
 ### Компании пользователя
 
 GET http://localhost:8090/company?user-id=2001
